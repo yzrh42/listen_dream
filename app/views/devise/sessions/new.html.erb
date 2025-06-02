@@ -1,5 +1,5 @@
 <div class="flex flex-grow mb-10 items-center justify-center">
-  <div class="w-5/6 mx-auto max-w-screen-xl">
+
     <%= form_with model: resource, url: session_path(resource_name), local: true, data: { turbo: false }, local: true do |f| %>
       <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
         <legend class="fieldset-legend">Login</legend> 
@@ -18,5 +18,5 @@
         </div>
       </fieldset>
     <% end %>
-  </div>
+
 </div>
