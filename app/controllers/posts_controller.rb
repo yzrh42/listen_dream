@@ -3,6 +3,12 @@ class PostsController < ApplicationController
 
     def index
         @posts = Post.all
+        case params[:sort]
+        when 'date'
+          @posts = @posts.order(date: :desc)
+        else
+          @posts = @posts.order(created_at: :desc)
+        end
     end
     
     def new

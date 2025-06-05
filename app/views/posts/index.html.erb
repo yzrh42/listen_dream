@@ -3,8 +3,16 @@
   <!-- タイトルを右上に配置 -->
   <h1 class="absolute top-0 left-0 text-2xl font-bold m-4">変な夢共有</h1>
 
+  <div class="mt-16 mb-0 flex gap-4">
+    <%= link_to "投稿日順", posts_path(sort: "created_at"),
+      class: "btn btn-sm #{params[:sort] != 'date' ? 'btn-primary' : 'btn-outline'}" %>
+
+    <%= link_to "日付順", posts_path(sort: "date"),
+      class: "btn btn-sm #{params[:sort] == 'date' ? 'btn-primary' : 'btn-outline'}" %>
+  </div>
+
   <!-- 投稿カード一覧 -->
-  <div class="mt-20 flex flex-col items-center">
+  <div class="mt-10 flex flex-col items-center">
     <% @posts.each do |post| %>
       <div class="card bg-base-100 w-96 shadow-sm mb-6">
         <div class="card-body">
