@@ -1,0 +1,20 @@
+<div class="flex flex-grow mb-10 items-center justify-center">
+    <%= form_with model: @post, local: true, data: { turbo: false }, class: "space-y-5" do |f| %>
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            <legend class="fieldset-legend">投稿の編集</legend>
+
+            <label class="label">日付</label>
+            <%= f.date_field :date, class: "input", autofocus: true %>
+
+            <label class="label">夢の内容</label>
+            <%= f.text_area :body, class: "textarea" %>
+
+            <label class="label">画像</label>
+            <%= f.file_field :image, class: "file-input" %>
+
+            <div class="mt-4">
+                <%= f.submit "更新", class: 'btn btn-primary w-full' %>
+            </div>
+        </fieldset>
+    <% end %>
+</div>
