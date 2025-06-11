@@ -19,6 +19,11 @@
           <p class="text-right text-sm text-gray-500">
             <%= post.date.strftime("%Y年%m月%d日") %>
           </p>
+          <% if post.image? %>
+            <div class="mt-2">
+                <%= image_tag post.image.url, class: "w-full rounded" %>
+            </div>
+          <% end %>
           <p class="text-left mt-2">
             <%= post.body %>
           </p>

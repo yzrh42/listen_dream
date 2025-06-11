@@ -10,6 +10,11 @@
             <%= f.text_area :body, class: "textarea" %>
 
             <label class="label">画像</label>
+            <% if @post.image? %>
+                <div class="mb-2">
+                    <%= image_tag @post.image.url, class: "w-full rounded shadow" %>
+                </div>
+            <% end %>
             <%= f.file_field :image, class: "file-input" %>
 
             <div class="mt-4">

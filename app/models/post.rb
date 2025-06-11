@@ -3,4 +3,6 @@ class Post < ApplicationRecord
 
     validates :body, presence: true, length: { maximum: 65_535 }
     validates :date, presence: true
+
+    mount_uploader :image, ImageUploader
   end
